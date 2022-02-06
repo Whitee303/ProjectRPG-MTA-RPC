@@ -9,8 +9,8 @@ let date = new Date();
 function UpdateStatements() {
     Gamedig.query({
         type: 'mtasa',
-        host: '51.83.184.65'
-    }).then((state) => {
+        host: '51.83.184.65'    
+	}).then((state) => {
         rpc.setActivity({
             details: `Podłączeni gracze: ${state.players.length} / ${state.maxplayers}`,
             state: `Ping serwera: ${state.ping}`,
@@ -21,10 +21,7 @@ function UpdateStatements() {
             buttons: [{ label: 'Discord', url: 'https://discord.gg/projectrpg' }, { label: 'Wejdź do gry', url: 'mtasa://s.projectrpg.pl:22003' }],
             largeImageText: "ProjectRPG"
         });
-    }).catch((error) => {
-        console.error(error)
     })
-
 }
 
 
